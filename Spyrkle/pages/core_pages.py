@@ -42,12 +42,12 @@ class Abstract_Page(object):
 
 class Notes(Abstract_Page):
     """docstring for Notes"""
-    def __init__(self, notebook, name):
-        super(Notes, self).__init__(notebook, name)
-        self.notes_html = []
+    def __init__(self, notebook, name): # the class Note contains two arguments: 1. notebook and 2. name. notebook comes from notebook.py, name is a string E.g. notes = pages.Notes(BOOK, "Notes on life")
+        super(Notes, self).__init__(notebook, name) # unsure what this one does 
+        self.notes_html = [] # 'notes_html' is an attribute of class Notes, is an empty list to put in hmtl url later 
 
     def add_note_html(self, html, static_urls=[], lib_urls=[]) :
-        self.notes_html.append(html)
+        self.notes_html.append(html) # add html into the list notes_html
         
         for e in static_urls :
             self.register_static(e)

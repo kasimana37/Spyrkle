@@ -9,7 +9,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 
-BOOK = notebook.Notebook("Test pyTorch Notebook2")
+BOOK = notebook.Notebook("Test pyTorch Notebook2") # used in creating a page: notes = pages.Notes(BOOK, "Notes on life")
 
 # Define model
 class TheModelClass(nn.Module):
@@ -81,11 +81,11 @@ if __name__ == '__main__':
     dag.set_attributes(opt_attr)
 
     #lets' add a caption
-    dag.set_caption("This is a model taken from a pyTorch tutorial. It's a basic conv net")
+    dag.set_caption("Hello World")
 
     #FINISHING WITH SOME NONSENSE
-    notes = pages.Notes(BOOK, "Notes on life")
-    for i in range(10) :
+    notes = pages.Notes(BOOK, "Notes on life") # create a separate 'page' and an object 'notes' using pages' Note method. Pages is the whole package of core_pages.py, running Notes method
+    for i in range(10) : # inside a 'page' called notes with name 'Notes on Life', can add notes inside it. Here, we are adding 10 notes inside this page.
         notes.add_note("Note %s" % i, "Life is %s Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolorum asperiores at veritatis architecto sequi nulla perspiciatis rerum modi, repellat assumenda quisquam dolorem sit molestiae aspernatur cum nemo placeat laboriosam." % i)
 
     notes = pages.Notes(BOOK, "Notes on life 2")
@@ -97,4 +97,4 @@ if __name__ == '__main__':
         notes.add_bullet_points_note("Note %s" % (i+100), ["test", "text", "iop"])
 
 
-BOOK.save(overwrite=True)
+    BOOK.save(overwrite=True)
