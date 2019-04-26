@@ -54,6 +54,8 @@ class Text(object):
         self.abstract = ""
         self.body = ""
         # self.supported_libraries = {}
+
+    # def save_txtfile(self, path = "/directory/for/saving/txtfiles/and/figures")
     
     # run set_content() to get a dictionary of title, abstract, and body
     def set_content(self, title = True, abstract = True, body = True) : # Need to create optionality for end of file
@@ -91,6 +93,11 @@ class Text(object):
         return(self.abstract)
     def get_body(self):
         self.body = self.content["Body"]
+        breaks = ("\n\n", "\n")
+        if self.body[len(self.body)-1] == '\n':
+            self.body = self.body[:len(self.body)-1]
+        for item in breaks:
+            self.body = self.body.replace(item, "</p><p>")
         return(self.body)
 
 

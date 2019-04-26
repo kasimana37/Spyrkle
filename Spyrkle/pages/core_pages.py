@@ -175,6 +175,7 @@ class Articles(Abstract_Page):
             <div> {body} </div>
         """.format(title = txt.get_title(), abstract = txt.get_abstract(), body = txt.get_body())
         self.article_html.append(html)
+        # save txtfile into the right folder
 
     def get_html(self) : # function called by 
         html="""
